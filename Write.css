@@ -1,0 +1,60 @@
+body {
+   background: linear-gradient(#E0115F,#E0115F,#E4D00A,#E4D00A, #0F52BA, #0F52BA ); text-align: center;padding-left: 10px;padding-right: 10px 
+}
+h1 {
+   color: black;
+   margin-left: 20px
+}
+ul{list-style-position: inside;}
+
+nav a {color: #ffffff;text-decoration: none;padding: 10px 25px;font-size: 18px;background: linear-gradient(#E0115F,#0F52BA) ;border-style: solid;border-color: #000000;border-radius: 50px}
+
+p {font-size: 20px; font-weight:700}
+
+img{width: 300px; height: 500px;border: 1px solid goldenrod}
+img {  max-width: 100%;  height: auto;  display: block; margin: 0 auto;}
+display: {flex; flex-direction: row;flex-wrap: wrap;justify-content: center}
+/* Holds the Original Poem on the left and Your Poem on the right */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /* Space between the original poem and your poem */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left; /* Keeps poem lines aligned cleanly on the left */
+}
+
+/* Left side box (1 part width) */
+.original-section {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.25); /* Optional subtle highlight */
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Right side box (2 parts width, since it holds 2 columns) */
+.erasure-section {
+  flex: 2;
+  background-color: rgba(255, 255, 255, 0.25); /* Optional subtle highlight */
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Puts the two halves of your poem side-by-side */
+.two-columns {
+  display: flex;
+  gap: 25px; /* Space between your two columns */
+}
+
+/* Makes both columns of your poem equal width */
+.poem-col {
+  flex: 1;
+}
+
+/* Adds spacing between stanzas */
+.main-container p {
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
