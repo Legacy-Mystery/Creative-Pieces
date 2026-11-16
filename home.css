@@ -1,16 +1,189 @@
 body {
-   background: linear-gradient(#E0115F,#E0115F,#E4D00A,#E4D00A, #0F52BA, #0F52BA ); text-align: center;padding-left: 10px;padding-right: 10px 
+  background: linear-gradient(#E0115F, #E0115F, #E4D00A, #E4D00A, #0F52BA, #0F52BA);
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 100vh; font-size: 20px;
 }
+
 h1 {
-   color: black;
-   margin-left: 20px
+  color: black;
+  margin-left: 20px;
 }
-ul{list-style-position: inside;}
 
-nav a {color: #ffffff;text-decoration: none;padding: 10px 25px;font-size: 18px;background: linear-gradient(#E0115F,#0F52BA) ;border-style: solid;border-color: #000000;border-radius: 50px}
+ul {
+  list-style-position: inside;
+}
 
-p {font-size: 20px; font-weight:700}
+p {
+  font-size: 25px;
+  font-weight: 700;
+}
 
-img{width: 300px; height: 500px;border: 1px solid goldenrod}
-img {  max-width: 100%;  height: auto;  display: block; margin: 0 auto;}
-display: {flex; flex-direction: row;flex-wrap: wrap;justify-content: center}
+/* Your exact pill-button style for nav links */
+nav a, .btn {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 25px;
+  font-size: 18px;
+  background: linear-gradient(#E0115F, #0F52BA);
+  border-style: solid;
+  border-color: #000000;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+nav a:hover, .btn:hover {
+  opacity: 0.85;
+}
+
+/* Fixed your flex container so it sits side-by-side and wraps cleanly */
+.portfolio-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+/* Cards to hold each piece description + your pill button */
+.piece-card {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid #000000;
+  border-radius: 20px;
+  padding: 20px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.piece-card h3 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #000000;
+}
+
+/* Overrides the global 20px/bold p tag just inside the cards so descriptions are easy to read */
+.piece-card p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+/* Cleaned up image rules (removed the conflicting fixed 300x500 rule so images don't stretch) */
+img {
+  max-width: 300px;
+  height: auto;
+  border: 1px solid goldenrod;
+  display: block;
+  margin: 0 auto;
+}
+/* Side-by-side poem layout for Write.html */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
+  max-width: 1150px;
+  margin: 30px auto;
+}
+
+.original-section {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+.erasure-section {
+  flex: 2;
+  min-width: 480px;
+  text-align: left;
+}
+
+.two-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.poem-col {
+  flex: 1;
+}
+.main-container {
+  max-width: 1280px;
+}
+
+.erasure-section {
+  flex: 2.5;
+  min-width: 620px;
+}
+
+/* Middle pivot stanza column */
+.middle-col {
+  align-self: center;
+  
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 0 18px;
+.main-container p {
+  margin-bottom: 16px;
+}
+
+.nav-buttons {
+  margin: 30px 0 40px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.ekphrastic {font-size:20px; padding-left: 400px;padding-right: 400px}
+/* Full-width card for Author's Notes / Reflections */
+.full-width-card {
+  flex: 1 1 100%;
+  text-align: left;
+  padding: 25px 30px;
+  justify-content: flex-start; /* Stops space-between from pushing text to the bottom */
+}
+
+/* Decorative Side Images */
+/* Full-height repeating star strips on both sides */
+.side-strip {
+  position: fixed;
+  top: 0;
+  bottom: 0;                      /* Stretches from the very top to the very bottom */
+  width: 220px;                   /* Width of the side border area */
+  background-image: url("stars.png"); /* <-- CHANGE "stars.png" TO YOUR EXACT STAR IMAGE FILENAME */
+  background-repeat: repeat-y;    /* Tiles the stars vertically down the whole screen */
+  background-size: 180px auto;    /* Controls the size of the repeating star pattern */
+  background-position: center top;
+  opacity: 0.85;
+  z-index: -1;                    /* Keeps the stars behind your text and cards */
+  pointer-events: none;
+}
+
+.left-strip {
+  left: 10px;
+}
+
+.right-strip {
+  right: 10px;
+}
+
+/* Hides side strips on smaller screens so they don't overlap your cards */
+@media (max-width: 1150px) {
+  .side-strip {
+    display: none;
+  }
+}
+  
